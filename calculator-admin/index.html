@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>▦ Calculator Admin</h2>
+    <nav>
+      <a class="active" href="#dashboard">Dashboard</a>
+      <a href="#history">Calculation History</a>
+    </nav>
+    <p class="sidebar-note">Administration</p>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CALCULATOR APPLICATION</p>
+        <h1 id="dashboard">Dashboard</h1>
+        <p>Monitor calculations saved by your application.</p>
+      </div>
+      <button id="refreshButton" class="secondary-button">
+        ↻ Refresh
+      </button>
+    </header>
+
+    <p id="message" class="message" role="status">
+      Connecting to server...
+    </p>
+
+    <section class="stats">
+      <article class="stat-card blue">
+        <p>Total calculations</p>
+        <strong id="totalCount">—</strong>
+      </article>
+      <article class="stat-card green">
+        <p>Additions (+)</p>
+        <strong id="addCount">—</strong>
+      </article>
+      <article class="stat-card orange">
+        <p>Subtractions (−)</p>
+        <strong id="subtractCount">—</strong>
+      </article>
+      <article class="stat-card purple">
+        <p>Multiplications (×)</p>
+        <strong id="multiplyCount">—</strong>
+      </article>
+      <article class="stat-card teal">
+        <p>Divisions (÷)</p>
+        <strong id="divideCount">—</strong>
+      </article>
+    </section>
+
+    <section class="panel" id="history">
+      <div class="panel-heading">
+        <div>
+          <h2>Calculation History</h2>
+          <p>Records returned by your Node.js API.</p>
+        </div>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search calculations..."
+          aria-label="Search calculations"
+        >
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Expression</th>
+              <th>Result</th>
+              <th>Operator</th>
+              <th>Created at</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <tr>
+              <td colspan="5">Loading calculations...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p id="recordCount" class="record-count"></p>
+    </section>
+
+    <footer>
+      Calculator Admin · Development version
+    </footer>
+  </main>
+</body>
+</html>
